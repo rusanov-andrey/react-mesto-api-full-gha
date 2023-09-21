@@ -53,9 +53,8 @@ class Api extends ApiBase{
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-68',
+  baseUrl: 'http://api.mestof.rusanovandrey.nomoredomainsrocks.ru',
   headers: {
-    Authorization: 'dad7bd08-9118-4abf-8ed0-6a6d22dfcdd6',
     'Content-Type': 'application/json'
   }
 });
