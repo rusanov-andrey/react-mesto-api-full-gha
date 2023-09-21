@@ -52,5 +52,5 @@ app.use(errors());
 app.use(errorHandler);
 
 app.listen(3000, () => {
-  console.log('Server started');
+  console.log('Server B+F started');
 });
