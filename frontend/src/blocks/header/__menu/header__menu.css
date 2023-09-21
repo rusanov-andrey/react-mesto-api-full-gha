@@ -1,0 +1,21 @@
+.header__menu {
+  margin: 21px 27px 0 0;
+  padding: 0;
+
+  font: 900 30px/1.2 Inter;
+  color: white;
+
+  display: none;
+
+  cursor: pointer;
+}
+
+.header__menu:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 500px) {
+  .header__menu {
+    display: block ;
+  }
+}

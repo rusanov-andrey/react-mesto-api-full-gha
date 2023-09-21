@@ -1,0 +1,42 @@
+.popup__close {
+  margin: 0;
+  padding: 0;
+
+  background-image: url(../../../images/close-icon.svg);
+  background-size: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0,0,0,0);
+
+  border: none;
+
+  width: 32px;
+  height: 32px;
+
+  position: absolute;
+  right: calc(-32px - 6px);
+  top: calc(-32px - 6px);
+
+  cursor: pointer;
+}
+
+.popup__close:hover {
+  opacity: 60%;
+}
+
+@media screen and (max-width: 1280px) {
+  .popup__close {
+    background-size: var(--popup__close-size);
+    width: var(--popup__close-size);
+    height: var(--popup__close-size);
+    right: calc(var(--popup__close-size) * -1 - 6px);
+    top: calc(var(--popup__close-size) * -1 - 6px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popup__close {
+    right: 0;
+    top: calc(var(--popup__close-size) * -1 - 16px);
+  }
+}

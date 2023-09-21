@@ -1,0 +1,16 @@
+.header__info {
+  margin: 51px 0 0;
+  padding: 0;
+
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 500px) {
+  .header__info {
+    margin-top: 34px;
+    margin-right: 27px;
+    display: none;
+  }
+}

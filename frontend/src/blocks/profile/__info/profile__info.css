@@ -1,0 +1,19 @@
+.profile__info {
+  margin: 0;
+  padding: 0;
+
+  color: white;
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .profile__info {
+    margin: 0 19px;
+  }
+}

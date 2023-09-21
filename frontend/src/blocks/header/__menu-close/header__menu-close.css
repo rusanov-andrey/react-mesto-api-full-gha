@@ -1,0 +1,17 @@
+.header__menu-close {
+  margin: 31px 27px 0;
+  padding: 0;
+
+  background-image: url(../../../images/close-icon.svg);
+  background-size: var(--popup__close-size);
+  width: var(--popup__close-size);
+  height: var(--popup__close-size);
+
+  display: none;
+
+  cursor: pointer;
+}
+
+.header__menu-close:hover {
+  opacity: 0.6;
+}

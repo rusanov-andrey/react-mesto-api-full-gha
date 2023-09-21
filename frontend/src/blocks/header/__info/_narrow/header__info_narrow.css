@@ -1,0 +1,9 @@
+.header__info_narrow {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .header__info_narrow {
+    display: block;
+  }
+}

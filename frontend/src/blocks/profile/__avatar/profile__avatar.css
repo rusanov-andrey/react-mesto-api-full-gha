@@ -1,0 +1,22 @@
+.profile__avatar {
+  margin: 2px 31px 2px 0px;
+  padding: 0;
+
+  box-sizing: border-box;
+  width: 118px;
+  height: 118px;
+  border-radius: 59px;
+  object-fit: cover;
+
+  cursor: url(../../../images/edit-pen-big.svg), pointer;
+}
+
+.profile__avatar:hover {
+  opacity: 0.2;
+}
+
+@media screen and (max-width: 800px) {
+  .profile__avatar {
+    margin: 2px auto 22px;
+  }
+}

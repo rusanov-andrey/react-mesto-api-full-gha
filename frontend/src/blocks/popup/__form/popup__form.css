@@ -1,0 +1,11 @@
+.popup__form {
+  margin: 0;
+  padding: 0;
+
+  cursor: default;
+
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
