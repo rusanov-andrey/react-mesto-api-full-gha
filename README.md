@@ -11,6 +11,6 @@
 
 IP-адрес 158.160.38.56
 
-Frontend https://...
+Frontend https://mestof.rusanovandrey.nomoredomainsrocks.ru
 
-Backend https://...
+Backend https://api.mestof.rusanovandrey.nomoredomainsrocks.ru
