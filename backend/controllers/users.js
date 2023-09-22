@@ -15,7 +15,7 @@ if (NODE_ENV !== 'production') {
     secret = 'some-secret-key';
   }
 } else if (!JWT_SECRET) {
-  throw Error('Не указан ключ');
+  throw new Error('Не указан ключ');
 }
 
 function getUserss(req, res, next) {

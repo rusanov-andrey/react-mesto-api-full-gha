@@ -41,6 +41,12 @@ app.use(bodyParser.json());
 app.use(checkOrijin);
 app.use(checkHeaders);
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.post('/signin', postSigninValidation(), login);
 app.post('/signup', postSignupValidation(), createUser);
 
