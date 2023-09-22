@@ -28,7 +28,7 @@ class AuthApi extends ApiBase{
 }
 
 const auth = new AuthApi({
-  baseUrl: 'https://auth.nomoreparties.co',
+  baseUrl: 'http://api.mestof.rusanovandrey.nomoredomainsrocks.ru',
   headers: {
     'Content-Type': 'application/json'
   }
