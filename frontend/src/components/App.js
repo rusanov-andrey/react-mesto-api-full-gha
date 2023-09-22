@@ -139,11 +139,11 @@ function App() {
   }
   
   function handleLogin(login, password) {
-    setLoginAttempt(loginAttempt+1);
     auth.login(login, password)
     .then((email) => {
       setLogInfo(login);
       navigate('/');
+      setLoginAttempt(loginAttempt+1);
     })
     .catch(err => {
       console.log(err);
