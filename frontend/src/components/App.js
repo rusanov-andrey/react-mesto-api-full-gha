@@ -156,7 +156,7 @@ function App() {
 
   function handleExit(evt) {
     clearLogInfo();
-    api.logout()
+    auth.logout()
     .catch((err) => console.log)
     .finally(() => {
       navigate('/sign-in')}
@@ -180,6 +180,7 @@ function App() {
   }, [isOpen, closeAllPopups]); 
 
   React.useEffect(() => {
+    console.log('API reloading...');
     Promise.all([
        api.getProfile(),
        api.getCards()
