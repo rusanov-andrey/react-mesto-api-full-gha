@@ -195,11 +195,13 @@ function App() {
 
   React.useEffect(() => {
     const login = localStorage.getItem('login');
+    console.log(`login: ${login}`);
 
     if( login /*&& token*/) {
       auth.checkToken(/*token*/)
-      .then((jsonData) => {
-        if(login === jsonData.email) {
+      .then((email) => {
+        console.log(`1 jsonData: ${email}`);
+        if(login === email) {
           setLoggedIn(true);
           setAuthorizationStatusIsDefimite(true);
           navigate('/')
