@@ -47,6 +47,8 @@ function App() {
 
   const [dataIsSending, setDataIsSending] = React.useState(false);
 
+  let loginAttempt = 0;
+
 
   const navigate = useNavigate();
 
@@ -138,6 +140,7 @@ function App() {
   }
   
   function handleLogin(login, password) {
+    loginAttempt++;
     auth.login(login, password)
     .then((email) => {
       setLogInfo(login);
@@ -191,7 +194,7 @@ function App() {
       return {initialCards: initialCards, userInfo: profileJson}
     })
     .catch(err => console.log(err));
-  }, []);
+  }, [loginAttempt]);
 
   React.useEffect(() => {
     const login = localStorage.getItem('login');
@@ -220,7 +223,7 @@ function App() {
 
     setAuthorizationStatusIsDefimite(true);
     navigate('/sign-in');
-  }, []);
+  }, [navigate]);
 
   if(!authorizationStatusIsDefimite) {
     return (
