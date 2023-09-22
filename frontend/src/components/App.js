@@ -156,7 +156,7 @@ function App() {
   function handleExit(evt) {
     clearLogInfo();
     auth.logout()
-    .catch((err) => console.log)
+    .catch(console.log)
     .finally(() => {
       navigate('/sign-in')}
     );
@@ -178,9 +178,7 @@ function App() {
     }
   }, [isOpen, closeAllPopups]); 
 
-  console.log(`loginAttempt ${loginAttempt}`);
   React.useEffect(() => {
-    console.log('API reloading...');
     Promise.all([
        api.getProfile(),
        api.getCards()
@@ -199,12 +197,10 @@ function App() {
 
   React.useEffect(() => {
     const login = localStorage.getItem('login');
-    console.log(`login: ${login}`);
 
     if(login) {
       auth.checkToken()
       .then((email) => {
-        console.log(`1 jsonData: ${email}`);
         if(login === email) {
           setLoggedIn(true);
           setAuthorizationStatusIsDefimite(true);
