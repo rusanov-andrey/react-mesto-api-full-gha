@@ -17,12 +17,12 @@ export class CardData {
   }
   
   static fromJSON(json, profileId) {
-    console.log(`card.owner_id: ${json.owner}; profileId: ${profileId}`);
+    console.log(`card.owner_id: ${json.owner}; profileId: ${profileId}; likes: ${json.likes}`);
     const result = new CardData(json.name, json.link);
     result._id = json._id;
     result.owner = (json.owner === profileId);
     result.likeCount = json.likes.length;
-    result.myLike = json.likes.map(like => like._id).includes(profileId);
+    result.myLike = json.likes.includes(profileId);
 
     return result;
   }
