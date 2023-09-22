@@ -179,6 +179,7 @@ function App() {
     }
   }, [isOpen, closeAllPopups]); 
 
+  console.log(`loginAttempt ${loginAttempt}`);
   React.useEffect(() => {
     console.log('API reloading...');
     Promise.all([
