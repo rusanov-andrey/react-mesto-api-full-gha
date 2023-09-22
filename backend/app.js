@@ -14,6 +14,7 @@ const { createUser, login } = require('./controllers/users');
 const { postSigninValidation, postSignupValidation } = require('./middlewares/auth_validation');
 const { NotFoundError } = require('./utils/error');
 const errorHandler = require('./middlewares/error_handler');
+const { checkOrijin, checkHeaders } = require('./middlewares/cors');
 
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
@@ -35,6 +36,8 @@ app.use(helmet());
 app.use(requestLogger);
 app.use(cookieParser());
 app.use(bodyParser.json());
+app.use(checkOrijin);
+app.use(checkHeaders);
 
 app.post('/signin', postSigninValidation(), login);
 app.post('/signup', postSignupValidation(), createUser);
