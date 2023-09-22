@@ -6,7 +6,8 @@ export default class ApiBase {
 
   _get(url, additionalHeaders) {
     return fetch(`${this._baseUrl}${url}`, {
-      headers: additionalHeaders ? {...this._headers, ...additionalHeaders} : this._headers
+      headers: additionalHeaders ? {...this._headers, ...additionalHeaders} : this._headers,
+      credentials: "include"
     })
     .then((res) => {
       return this._handleRes(res);
@@ -27,6 +28,7 @@ export default class ApiBase {
     return fetch(`${this._baseUrl}${url}`, {
       method: method,
       headers: this._headers,
+      credentials: "include",
       body: JSON.stringify(data || {}),
     })
     .then(res => {
