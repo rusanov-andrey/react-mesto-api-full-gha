@@ -53,7 +53,7 @@ class Api extends ApiBase{
 }
 
 const api = new Api({
-  baseUrl: 'http://api.mestof.rusanovandrey.nomoredomainsrocks.ru',
+  baseUrl: 'https://api.mestof.rusanovandrey.nomoredomainsrocks.ru',
   headers: {
     'Content-Type': 'application/json'
   }
