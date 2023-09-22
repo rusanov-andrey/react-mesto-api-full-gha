@@ -33,6 +33,7 @@ class Api extends ApiBase{
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: 'DELETE',
       headers: this._headers,
+      credentials: "include",
     })
     .then(res => {
       if(res.ok) {
