@@ -7,6 +7,17 @@ const {
   NotAuthorizedError,
 } = require('../utils/error');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+let secret = JWT_SECRET;
+
+if (NODE_ENV !== 'production') {
+  if (!JWT_SECRET) {
+    secret = 'some-secret-key';
+  }
+} else if (!JWT_SECRET) {
+  throw Error('Не указан ключ');
+}
+
 function getUserss(req, res, next) {
   User.find({})
     .then((users) => res.send(users))
@@ -83,7 +94,7 @@ function login(req, res, next) {
       if (!matched) {
         return Promise.reject(new Error('Неправильные почта или пароль'));
       }
-      const token = jwt.sign({ _id: userId }, 'some-secret-key', { expiresIn: '7d' });
+      const token = jwt.sign({ _id: userId }, secret, { expiresIn: '7d' });
       res.cookie('jwt', token, { maxAge: 3600000 * 24 * 7, httpOnly: true });
       return res.send({ email });
     })
