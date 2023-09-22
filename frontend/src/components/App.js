@@ -44,10 +44,9 @@ function App() {
 
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [authorizationStatusIsDefimite, setAuthorizationStatusIsDefimite] = React.useState(false);
+  const [loginAttempt, setLoginAttempt] = React.useState(0);
 
   const [dataIsSending, setDataIsSending] = React.useState(false);
-
-  let loginAttempt = 0;
 
 
   const navigate = useNavigate();
@@ -140,7 +139,7 @@ function App() {
   }
   
   function handleLogin(login, password) {
-    loginAttempt++;
+    setLoginAttempt(loginAttempt+1);
     auth.login(login, password)
     .then((email) => {
       setLogInfo(login);
