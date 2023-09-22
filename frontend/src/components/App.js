@@ -43,7 +43,7 @@ function App() {
   const [successRegistration, setSuccessRegistration] = React.useState(false);
 
   const [loggedIn, setLoggedIn] = React.useState(false);
-  const [token, setToken] = React.useState(localStorage.getItem('jwt'));
+  // const [token, setToken] = React.useState(localStorage.getItem('jwt'));
   const [authorizationStatusIsDefimite, setAuthorizationStatusIsDefimite] = React.useState(false);
 
   const [dataIsSending, setDataIsSending] = React.useState(false);
@@ -126,25 +126,25 @@ function App() {
     });
   }
 
-  function setLogInfo(login, token) {
+  function setLogInfo(login/*, token*/) {
     localStorage.setItem('login', login);
-    localStorage.setItem('jwt', token);
+    //localStorage.setItem('jwt', token);
     setLoggedIn(true);
     setAuthorizationStatusIsDefimite(true);
-    setToken(token);
+    //setToken(token);
 }
   function clearLogInfo() {
     localStorage.removeItem('login');
-    localStorage.removeItem('jwt');
+    //localStorage.removeItem('jwt');
     setAuthorizationStatusIsDefimite(true);
     setLoggedIn(false);
-    setToken('');
+    //setToken('');
   }
   
   function handleLogin(login, password) {
     auth.login(login, password)
-    .then((token) => {
-      setLogInfo(login, token);
+    .then((email) => {
+      setLogInfo(login/*, token*/);
       navigate('/');
     })
     .catch(err => {
@@ -196,8 +196,8 @@ function App() {
   React.useEffect(() => {
     const login = localStorage.getItem('login');
 
-    if( login && token) {
-      auth.checkToken(token)
+    if( login /*&& token*/) {
+      auth.checkToken(/*token*/)
       .then((jsonData) => {
         if(login === jsonData.email) {
           setLoggedIn(true);

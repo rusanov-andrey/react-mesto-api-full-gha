@@ -18,12 +18,13 @@ class AuthApi extends ApiBase{
       "email": email 
     })
     .then(jsonData => {
-      return jsonData.token;
+      //return jsonData.token;
+      return jsonData.email;
     })
   }
 
-  checkToken(token) {
-    return this._get('/users/me', {"Authorization": `Bearer  ${token}`}).then(jsonData => jsonData.data);
+  checkToken(/*token*/) {
+    return this._get('/users/me'/*, {"Authorization": `Bearer  ${token}`}*/).then(jsonData => jsonData.data);
   }
 }
 

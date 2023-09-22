@@ -17,6 +17,7 @@ export class CardData {
   }
   
   static fromJSON(json, profileId) {
+    console.log(`card.owner._id: ${json.owner._id}; profileId: ${profileId}`);
     const result = new CardData(json.name, json.link);
     result._id = json._id;
     result.owner = (json.owner._id === profileId);
