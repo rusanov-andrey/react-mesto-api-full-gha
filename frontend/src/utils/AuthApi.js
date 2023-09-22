@@ -22,6 +22,10 @@ class AuthApi extends ApiBase{
     })
   }
 
+  logout() {
+    return this._post('/signout', {});    
+  }
+
   checkToken() {
     return this._get('/users/me'/*, {"Authorization": `Bearer  ${token}`}*/).then(jsonData => jsonData.email);
   }

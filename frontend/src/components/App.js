@@ -153,7 +153,11 @@ function App() {
 
   function handleExit(evt) {
     clearLogInfo();
-    navigate('/sign-in');
+    api.logout()
+    .catch((err) => console.log)
+    .finally(() => {
+      navigate('/sign-in')}
+    );
 }
 
   const isOpen = isEditAvatarPopupOpen || isEditProfilePopupOpen || isAddPCardPopupOpen || selectedCard || isAuthInfoPopupOpen;
