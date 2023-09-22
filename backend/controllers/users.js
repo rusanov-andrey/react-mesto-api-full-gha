@@ -103,6 +103,11 @@ function login(req, res, next) {
     });
 }
 
+function logout(req, res) {
+  res.clearCookie('jwt');
+  res.end();
+}
+
 module.exports = {
   getUserss,
   createUser,
@@ -111,4 +116,5 @@ module.exports = {
   updateProfile,
   updateAvatar,
   login,
+  logout,
 };

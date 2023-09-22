@@ -115,7 +115,8 @@ function App() {
   function handleRegister(login, password) {
     auth.register(login, password)
     .then(() => {
-      setSuccessRegistration(true)
+      setSuccessRegistration(true);
+      navigate('/sign-in');
     })
     .catch(err => {
       setSuccessRegistration(false)

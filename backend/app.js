@@ -12,7 +12,7 @@ const { errors } = require('celebrate');
 const auth = require('./middlewares/auth');
 const userRouter = require('./routes/users');
 const cardRouter = require('./routes/cards');
-const { createUser, login } = require('./controllers/users');
+const { createUser, login, logout } = require('./controllers/users');
 const { postSigninValidation, postSignupValidation } = require('./middlewares/auth_validation');
 const { NotFoundError } = require('./utils/error');
 const errorHandler = require('./middlewares/error_handler');
@@ -33,9 +33,9 @@ const limiter = rateLimit({
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 });
 
+app.use(requestLogger);
 app.use(limiter);
 app.use(helmet());
-app.use(requestLogger);
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(checkOrijin);
@@ -53,6 +53,7 @@ app.post('/signup', postSignupValidation(), createUser);
 app.use(auth);
 app.use(userRouter);
 app.use(cardRouter);
+app.post('/signout', logout);
 app.use((req, res, next) => {
   next(new NotFoundError());
 });
