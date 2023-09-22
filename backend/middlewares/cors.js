@@ -3,7 +3,7 @@ const allowedCors = [
   'http://mestof.rusanovandrey.nomoredomainsrocks.ru',
   'https://www.mestof.rusanovandrey.nomoredomainsrocks.ru',
   'http://www.mestof.rusanovandrey.nomoredomainsrocks.ru',
-  'localhost:3000',
+  'http://localhost:3000',
 ];
 
 function checkOrijin(req, res, next) {
