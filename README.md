@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.38.56
+IP 158.160.38.56
 
 Frontend https://mestof.rusanovandrey.nomoredomainsrocks.ru
 
